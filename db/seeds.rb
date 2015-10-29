@@ -1,19 +1,3 @@
-Ingredient.destroy_all
-ingredients_attributes = [
-  {
-    name:         "Vodka"
-  },
-  {
-    name:         "Wiksi"
-  },
-  {
-    name:         "Coca"
-  }
-  {
-    name:         "Soda"
-  }
-  {
-    name:         "White spirit"
-  }
-]
-ingredients_attributes.each { |params| Ingredient.create!(params) }
+ingredients = %w(lemon ice mint leaves redbull jagermeister sugar tonic gin rhum)
+
+ingredients.each { |ingredient| Ingredient.create(name: ingredient) }
