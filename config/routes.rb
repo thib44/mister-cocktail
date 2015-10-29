@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'page/home'
+  get "page/home"
+  resources :cocktails, only: [:index, :show, :new, :create] do
+    resources :doses, only: [:index, :show, :new, :create, :delete, :update]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

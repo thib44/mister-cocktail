@@ -1,0 +1,8 @@
+<h1>New Dose</h1>
+<h2><%= @cocktail.name %>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description, placeholder: "Description du cocktail" %>
+  <%= f.input :ingredient_id, as: :select, collection: Ingredient.all %>
+  <%= f.submit "Go", class: "btn btn-success" %>
+  <% end %>
+<%= link_to 'Back', cocktail_path(@cocktail) %>
