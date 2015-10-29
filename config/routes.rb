@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "page/home"
+  root 'cocktails#index'
   resources :cocktails, only: [:index, :show, :new, :create] do
     resources :doses, only: [:index, :show, :new, :create, :delete, :update]
   end
